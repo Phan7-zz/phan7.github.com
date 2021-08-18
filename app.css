@@ -1,0 +1,66 @@
+body {
+    background-color: #d3d3d3;
+    color: #222222;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#logoContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#logo {
+    width: 400px;
+    height: 320px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#newGameBtnBox {
+    display: flex;
+    justify-content: center;
+}
+
+#newGameBtn {
+    background-color: rgb(9, 206, 9);
+    margin: 30px;
+    border-radius: 15px;
+    color: #222222;
+    font-size: 28px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+#newGameBtn:hover {
+    font-size: 30px;
+    width: 260px;
+    height: 50px;
+}
+
+#newGameBtn:after {
+    font-size: 28px;
+    width: 250px;
+    height: 40px;
+}
+
+#inputBox {
+    display: flex;
+    justify-content: center;
+}
+
+#amountPlayers {
+    margin: 10px;
+}
+
+.playersBtn {
+    border-radius: 25px;
+    background-color: rgb(4, 75, 207);
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+}
