@@ -462,14 +462,13 @@ function randomChoice(max, min, change) {
         players[turn]['position'] += result
         
         if (players[turn]['position'] >= 30) {
+            players[turn]['position'] = 30
             gameBox.innerHTML = `
                 <h1>Parabéns ${players[turn]['name']}, você ganhou!</h1>
                 <h2>Parabéns à todos os outros jogadores também, o status final de cada um de vocês foi esse abaixo</h2>
-                ${getStatus}`
-            return ''
+                ${getStatus()}`
         }
-
-        if (result == 1) {
+        else if (result == 1) {
             document.getElementById('randomResult').innerHTML = `Ande 1 casa`
             phase2()
         }
@@ -484,7 +483,7 @@ function randomChoice(max, min, change) {
 }
 
 function getQuestion() {
-    var randomQuest = randomChoice(6, 0, false)
+    var randomQuest = randomChoice(questions[getArea(players[turn]['position'])[0]].length, 0, false)
     quest = questions[getArea(players[turn]['position'])[0]][randomQuest]
     questHtml = `
         <h1 style="font-size: 20px;text-align: center">${quest['quest']}</h1>
