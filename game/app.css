@@ -1,0 +1,49 @@
+body {
+    background-color: #d3d3d3;
+    color: #222222;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#randomBox {
+    display: flex;
+    justify-content: center;
+}
+
+#randomBtn {
+    width: 90px;
+    height: 90px;
+    font-size: 25px;
+    border-radius: 10px;
+}
+
+#randomResult {
+    font-size: 35px;
+    margin: 0px;
+}
+
+#cardBox {
+    display: flex;
+    justify-content: center;
+}
+
+#card {
+    width: 270px;
+    height: 390px;
+    border-radius: 10px;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.answer {
+    text-align: left;
+    margin: 5px;
+    width: 250px;
+    height: 45px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-left: 2px;
+}
