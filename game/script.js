@@ -3,6 +3,7 @@ var gameBox = document.getElementById('gameBox')
 var cookies = document.cookie.split(';')
 var amountPlayers = Number(cookies[0].split('=')[1])
 var turn = -1
+var quest
 var addPlayer = Number
 var players = []
 for (addPlayer = 2; addPlayer < amountPlayers + 2; addPlayer++) {
@@ -16,14 +17,6 @@ for (addPlayer = 2; addPlayer < amountPlayers + 2; addPlayer++) {
 
 var questions = {
     0: [ // História
-        {
-            'quest': 'Quem descobriu o Brasil?',
-            'a': 'Alvares Pedro de Cabral',
-            'b': 'Ana Maria Braga',
-            'c': 'Pelé',
-            'd': 'Pedro Alvares Cabral',
-            'correct': 'd'
-        },
         {
             'quest': 'Em que período da pré-história o fogo foi descoberto?',
             'a': 'Neolítico',
@@ -301,46 +294,6 @@ var questions = {
             'd': '500',
             'correct': 'c'
         },
-        {
-            'quest': '',
-            'a': '',
-            'b': '',
-            'c': '',
-            'd': '',
-            'correct': ''
-        },
-        {
-            'quest': '',
-            'a': '',
-            'b': '',
-            'c': '',
-            'd': '',
-            'correct': ''
-        },
-        {
-            'quest': '',
-            'a': '',
-            'b': '',
-            'c': '',
-            'd': '',
-            'correct': ''
-        },
-        {
-            'quest': '',
-            'a': '',
-            'b': '',
-            'c': '',
-            'd': '',
-            'correct': ''
-        },
-        {
-            'quest': '',
-            'a': '',
-            'b': '',
-            'c': '',
-            'd': '',
-            'correct': ''
-        }
     ],
     4: [ // Geral
         {
@@ -383,46 +336,6 @@ var questions = {
             'd': 'Marrom',
             'correct': 'c'
         },
-        {
-            'quest': '',
-            'a': '',
-            'b': '',
-            'c': '',
-            'd': '',
-            'correct': ''
-        },
-        {
-            'quest': '',
-            'a': '',
-            'b': '',
-            'c': '',
-            'd': '',
-            'correct': ''
-        },
-        {
-            'quest': '',
-            'a': '',
-            'b': '',
-            'c': '',
-            'd': '',
-            'correct': ''
-        },
-        {
-            'quest': '',
-            'a': '',
-            'b': '',
-            'c': '',
-            'd': '',
-            'correct': ''
-        },
-        {
-            'quest': '',
-            'a': '',
-            'b': '',
-            'c': '',
-            'd': '',
-            'correct': ''
-        }
     ],
 }
 
@@ -465,7 +378,7 @@ function randomChoice(max, min, change) {
             players[turn]['position'] = 30
             gameBox.innerHTML = `
                 <h1>Parabéns ${players[turn]['name']}, você ganhou!</h1>
-                <h2>Parabéns à todos os outros jogadores também, o status final de cada um de vocês foi esse abaixo</h2>
+                <h2>Parabéns à todos os outros jogadores também, o status final de cada um de vocês foi:</h2>
                 ${getStatus()}`
         }
         else if (result == 1) {
@@ -483,7 +396,7 @@ function randomChoice(max, min, change) {
 }
 
 function getQuestion() {
-    var randomQuest = randomChoice(questions[getArea(players[turn]['position'])[0]].length, 0, false)
+    var randomQuest = randomChoice(questions[getArea(players[turn]['position'])[0]].length - 1, 0, false)
     quest = questions[getArea(players[turn]['position'])[0]][randomQuest]
     questHtml = `
         <h1 style="font-size: 20px;text-align: center">${quest['quest']}</h1>
