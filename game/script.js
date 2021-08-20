@@ -3,7 +3,6 @@ var gameBox = document.getElementById('gameBox')
 var cookies = document.cookie.split(';')
 var amountPlayers = Number(cookies[0].split('=')[1])
 var turn = -1
-var quest
 var addPlayer = Number
 var players = []
 for (addPlayer = 2; addPlayer < amountPlayers + 2; addPlayer++) {
@@ -88,7 +87,48 @@ var questions = {
             'c': '101',
             'd': '116',
             'correct': 'd'
-        }
+        },
+        {
+            'quest': 'Qual o nome do presidente do Brasil que ficou conhecido como Jango?',    
+            'a': 'Jânio Quadros',
+            'b': 'Jacinto Anjos',
+            'c': 'Getúlio Vargas',
+            'd': 'João Figueiredoe) João Goulart',
+            'correct': 'd'
+        },
+        {
+            'quest': 'Quais as duas datas que são comemoradas em novembro?',
+            'a': 'Independência do Brasil e Dia da Bandeira',
+            'b': 'Proclamação da República e Dia Nacional da Consciência Negra',
+            'c': 'Dia do Médico e Dia de São Lucas',
+            'd': 'Dia de Finados e Dia Nacional do Livro',
+            'correct': 'b'
+        },
+        {
+            'quest': 'Qual era o nome de Aleijadinho?',
+            'a': 'Alexandrino Francisco Lisboa',
+            'b': 'Manuel Francisco Lisboa',
+            'c': 'Alex Francisco Lisboa',
+            'd': 'Antônio Francisco Lisboa',
+            'correct': 'd'
+        },
+        {
+            'quest': 'Nome do navegador português que, conforme a lenda oficial, descobriu o Brasil.',
+            'a': 'Américo Vespúcio',
+            'b': 'Vasco da Gama',
+            'c': 'Pedro Álvares Cabral',
+            'd': 'Dom João VI',
+            'correct': 'c'
+        },
+        {
+            'quest': 'Quem pintou "Guernica"?',
+            'a': 'Paul Cézanne',
+            'b': 'Pablo Picasso',
+            'c': 'Diego Rivera',
+            'd': 'Tarsila do Amaral',
+            'correct': 'c'
+        },
+//
     ],
     1: [ // Geografia
         {
@@ -169,7 +209,62 @@ var questions = {
             'c': 'Aumento das marés',
             'd': 'Horário de verão',
             'correct': 'b'
-        }
+        },
+        {
+            'quest': 'Quais os países que têm a maior e a menor expectativa de vida do mundo?',    'a': 'Japão e Serra Leoa',
+            'b': 'Austrália e Afeganistão',
+            'c': 'Itália e Chade',
+            'd': 'Brasil e Congo',
+            'correct': 'a'
+        },
+        {
+            'quest': 'Em qual local da Ásia o português é língua oficial?',
+            'a': 'Índia',
+            'b': 'Filipinas',
+            'c': 'Moçambique',
+            'd': 'Macau',
+            'correct': 'd'
+        },
+        {
+            'quest': 'Cidade brasileira onde está o Rio Tietê.',
+            'a': 'Manaus',
+            'b': 'São Paulo',
+            'c': 'Rio de Janeiro',
+            'd': 'Porto Alegre',
+            'correct': 'b'
+        },
+        {
+            'quest': 'Nome que se dá a uma porção de terra cercada de água por todos os lados.',
+            'a': 'Montanha',
+            'b': 'Lagoa',
+            'c': 'Istmo',
+            'd': 'Ilha',
+            'correct': 'd'
+        },
+        {
+            'quest': 'Cidade da Europa onde está localizada a Torre Eiffel.',
+            'a': 'Madri',
+            'b': 'Roma',
+            'c': 'Londres',
+            'd': 'Paris',
+            'correct': 'd'
+        },
+        {
+            'quest': 'Cidade brasileira conhecida como "A Cidade Maravilhosa".',
+            'a': 'Rio de Janeiro',
+            'b': 'Campos do Jordão',
+            'c': 'Brasília',
+            'd': 'Manaus',
+            'correct': 'a'
+        },
+        {
+            'quest': 'Estação do ano que antecede a Primavera.',
+            'a': 'Outono',
+            'b': 'Ventos Elíseos',
+            'c': 'Inverno',
+            'd': 'Estação da seca',
+            'correct': 'c'
+        },
     ],
     2: [ // Biologia
         {
@@ -251,7 +346,31 @@ var questions = {
             'c': 'Algas',
             'd': 'Virus',
             'correct': 'd'
-        }
+        },
+        {
+            'quest': 'Qual o maior animal terrestre?',
+            'a': 'Baleia Azul',
+            'b': 'Dinossauro',
+            'c': 'Elefante africano',
+            'd': 'Tubarão Branco',
+            'correct': 'a'
+        },
+        {
+            'quest': 'De acordo com a teoria celular, quais dos organismos a seguir não poderiam ser considerados seres vivos:',
+            'a': 'Bactérias',
+            'b': 'Protozoários',
+            'c': 'Algas',
+            'd': 'Vírus',
+            'correct': 'd'
+        },
+        {
+            'quest': 'Analise atentamente as alternativas seguintes e marque aquela que indica a função do nucléolo',
+            'a': 'Controlar todas as atividades celulares',
+            'b': 'Promover a secreção de substâncias',
+            'c': 'Garantir a síntese de lipídios',
+            'd': 'Formar as subunidades ribossomaise) Realizar a fotossíntese',
+            'correct': 'a'
+        },
     ],
     3: [ // Matamática
         {
@@ -292,6 +411,46 @@ var questions = {
             'b': '50',
             'c': '100',
             'd': '500',
+            'correct': 'c'
+        },
+        {
+            'quest': 'Eu comprei 500 balas comi 305 e dei 120 para meu irmão. Com quantas balas eu fiquei?',
+            'a': '85',
+            'b': '75 ',
+            'c': '70',
+            'd': '65',
+            'correct': 'b'
+        },
+        {
+            'quest': 'Se 1 pato tem 2 patas. Quanto patas tem 35 patos?',
+            'a': '50',
+            'b': '60',
+            'c': '70 ',
+            'd': '20',
+            'correct': 'c'
+        },
+        {
+            'quest': 'Quanto é 5% de 200,00 reais?',
+            'a': '10 ',
+            'b': '5',
+            'c': '20',
+            'd': '200',
+            'correct': 'a'
+        },
+        {
+            'quest': 'Minha vizinha está morando aqui há 5 anos. Há quantos dias ela está morando aqui? (Atenção: um ano desses é bissexto)',
+            'a': '1827',
+            'b': '1836',
+            'c': '1826 ',
+            'd': '1900',
+            'correct': 'c'
+        },
+        {
+            'quest': 'Qual número certo de pi?',
+            'a': '3,14157... ',
+            'b': '3,14158... ',
+            'c': '3,14159... ',
+            'd': '3,14160...',
             'correct': 'c'
         },
     ],
@@ -335,6 +494,54 @@ var questions = {
             'c': 'Roxo',
             'd': 'Marrom',
             'correct': 'c'
+        },
+        {
+            'quest': 'De onde é a invenção do chuveiro elétrico?',
+            'a': 'França',
+            'b': 'Inglaterra',
+            'c': 'Brasil ',
+            'd': 'Austrália',
+            'correct': 'c'
+        },
+        {
+            'quest': 'Atualmente, quantos elementos químicos a tabela periódica possui?',
+            'a': '113',
+            'b': '109',
+            'c': '108',
+            'd': '118 ',
+            'correct': 'd'
+        },
+        {
+            'quest': 'Qual a altura da rede de vôlei nos jogos masculino e feminino?',
+            'a': '2,4 para ambos',
+            'b': '2,5m e 2,0m',
+            'c': '1,8m e 1,5m',
+            'd': '2,45m e 2,15me) 2,43m e 2,24m ',
+            'correct': 'd'
+        },
+        {
+            'quest': 'Qual a velocidade da luz?',
+            'a': '300 000 000 metros por segundo (m/s) ',
+            'b': '150 000 000 metros por segundo (m/s)',
+            'c': '199 792 458 metros por segundo (m/s)',
+            'd': '299 792 458 metros por segundo (m/s) ',
+            'correct': 'd'
+        },
+        {
+            'quest': 'Metal precioso de cor amarela, muito usado no fabrico de alianças, anéis, brincos, e até moedas.',
+            'a': 'Prata',
+            'b': 'Ouro ',
+            'c': 'Aço Inoxidável',
+            'd': 'Cobre',
+            'correct': 'b'
+        },
+        {
+            'quest': 'Nome do brasileiro conhecido como "O Pai da Aviação".',
+            'a': 'Castro Alves',
+            'b': 'José de Alencar',
+            'c': 'Osvaldo Cruz',
+            'd': 'Alberto Santos Dumont ',
+            'correct': 'd'
         },
     ],
 }
@@ -397,8 +604,9 @@ function randomChoice(max, min, change) {
 
 function getQuestion() {
     var randomQuest = randomChoice(questions[getArea(players[turn]['position'])[0]].length - 1, 0, false)
-    quest = questions[getArea(players[turn]['position'])[0]][randomQuest]
-    questHtml = `
+    var quest = questions[getArea(players[turn]['position'])[0]][randomQuest]
+    var questHtml = `
+        <h1 id="timer" style="text-align: center">40</h1>
         <h1 style="font-size: 20px;text-align: center">${quest['quest']}</h1>
         <button onclick="checkAnswer(${randomQuest}, 'a')" class="answer">A) ${quest['a']}</button><br>
         <button onclick="checkAnswer(${randomQuest}, 'b')" class="answer">B) ${quest['b']}</button><br>
@@ -441,6 +649,15 @@ function checkAnswer(quest, answered) {
     }
 }
 
+function timeOver() {
+    var muchBack = randomChoice(7, 2, false)
+    players[turn]['position'] - muchBack
+    gameBox.innerHTML = `
+        <h1>O tempo acabou!</h1>
+        <h1>${players[turn]['name']}, volte ${muchBack} casas</h1>
+        <button onclick=phase1()>Continuar<button>`
+}
+
 function phase1() {
     if (turn == cookies[0].split('=')[1] - 1) {
         turn = 0
@@ -478,6 +695,8 @@ function phase3() {
                 ${getQuestion()}
             </div>
         </div>`
+    var timer = document.getElementById("timer")
+    setInterval(function () {if (timer.innerHTML == 0) {window.clearInterval(); timeOver()} else{timer.innerHTML = Number(timer.innerHTML - 1)}}, 1000)
 }
 
 phase1()
