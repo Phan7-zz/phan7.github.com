@@ -651,11 +651,18 @@ function checkAnswer(quest, answered) {
 
 function timeOver() {
     var muchBack = randomChoice(7, 2, false)
-    players[turn]['position'] - muchBack
+    if (players[turn]['position'] <= muchBack) {
+        players[turn]['position'] = 0
+    }
+    else {
+        players[turn]['position'] -= muchBack
+    }
     gameBox.innerHTML = `
         <h1>O tempo acabou!</h1>
         <h1>${players[turn]['name']}, volte ${muchBack} casas</h1>
-        <button onclick=phase1()>Continuar<button>`
+        <div style="display: flex;justify-content: center">
+            <button onclick=phase1() id="continueBtn">Continuar</button>
+        </div>`
 }
 
 function phase1() {
@@ -696,7 +703,7 @@ function phase3() {
             </div>
         </div>`
     var timer = document.getElementById("timer")
-    setInterval(function () {if (timer.innerHTML == 0) {window.clearInterval(); timeOver()} else{timer.innerHTML = Number(timer.innerHTML - 1)}}, 1000)
+    var interval = setInterval(function () {if (timer.innerHTML == 0) {window.clearInterval(interval); timeOver()} else{timer.innerHTML = Number(timer.innerHTML - 1)}}, 1000)
 }
 
 phase1()
