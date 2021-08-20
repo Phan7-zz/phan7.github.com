@@ -47,3 +47,11 @@ h1, h2 {
     border-radius: 5px;
     margin-left: 2px;
 }
+
+#continueBtn {
+    width: 120px;
+    height: 90px;
+    font-size: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
