@@ -650,6 +650,7 @@ function checkAnswer(quest, answered) {
 }
 
 function timeOver() {
+    window.clearInterval(interval)
     var muchBack = randomChoice(7, 2, false)
     if (players[turn]['position'] <= muchBack) {
         players[turn]['position'] = 0
@@ -703,7 +704,7 @@ function phase3() {
             </div>
         </div>`
     var timer = document.getElementById("timer")
-    var interval = setInterval(function () {if (timer.innerHTML == 0) {window.clearInterval(interval); timeOver()} else{timer.innerHTML = Number(timer.innerHTML - 1)}}, 1000)
+    var interval = setInterval(function () {if (timer.innerHTML == 0) {timeOver()} else{timer.innerHTML = Number(timer.innerHTML - 1)}}, 1000)
 }
 
 phase1()
