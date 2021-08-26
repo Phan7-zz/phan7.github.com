@@ -3,6 +3,7 @@ var gameBox = document.getElementById('gameBox')
 var cookies = document.cookie.split(';')
 var amountPlayers = Number(cookies[0].split('=')[1])
 var turn = -1
+var interval
 var addPlayer = Number
 var players = []
 for (addPlayer = 2; addPlayer < amountPlayers + 2; addPlayer++) {
@@ -695,6 +696,16 @@ function phase2() {
         </div>`
 }
 
+function verifyTimer() {
+    var timer = document.getElementById("timer")
+    if (timer.innerHTML == 0) {
+        return 1
+    }
+    else {
+        return 0
+    }
+}
+
 function phase3() {
     document.getElementById('card').remove()
     gameBox.innerHTML = `
@@ -703,8 +714,7 @@ function phase3() {
                 ${getQuestion()}
             </div>
         </div>`
-    var timer = document.getElementById("timer")
-    var interval = setInterval(function () {if (timer.innerHTML == 0) {timeOver()} else{timer.innerHTML = Number(timer.innerHTML - 1)}}, 1000)
+    interval = window.setInterval(if (verifyTimer() == 1) {timeOver()} else{timer.innerHTML = Number(timer.innerHTML) - 1}, 1000)
 }
 
 phase1()
