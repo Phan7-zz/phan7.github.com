@@ -1,10 +1,14 @@
+// Setting important variables
 var gameTitle = document.getElementById('gameTitle')
 var gameBox = document.getElementById('gameBox')
+var interval
+var turn = -1
+
+// Getting the amount of players
 var cookies = document.cookie.split(';')
 var amountPlayers = Number(cookies[0].split('=')[1])
-var turn = -1
-var interval
-var addPlayer = Number
+
+// Adding players to a list
 var players = []
 for (addPlayer = 2; addPlayer < amountPlayers + 2; addPlayer++) {
     players.push(
@@ -15,6 +19,7 @@ for (addPlayer = 2; addPlayer < amountPlayers + 2; addPlayer++) {
     )
 }
 
+// This list above is all the game questions
 var questions = {
     0: [ // História
         {
@@ -547,6 +552,7 @@ var questions = {
     ],
 }
 
+// This function above gets the player's area and the color of the area 
 function getArea(position) {
     if (position <=6) {
         return [0, '#ff0000']
@@ -565,6 +571,7 @@ function getArea(position) {
     }
 }
 
+// This function gets the status of the game
 function getStatus() {
     var status = ''
     for (player in Object.keys(players)) {
@@ -575,13 +582,17 @@ function getStatus() {
     return status
 }
 
+// Thsi functions gets a random number between the numbers given
 function randomChoice(max, min, change) {
     var result = parseInt(Math.random() * (max - min) + min)
+
+    // If change is true, it will show the number in tthe screen
     if (change == true) {
         document.getElementById('randomBox').remove()
         document.getElementById('statusBox').remove()
         players[turn]['position'] += result
         
+        // Check if player has won
         if (players[turn]['position'] >= 30) {
             players[turn]['position'] = 30
             gameBox.innerHTML = `
@@ -603,6 +614,7 @@ function randomChoice(max, min, change) {
     }
 }
 
+// THis function gets a random question baseed on the player's area
 function getQuestion() {
     var randomQuest = randomChoice(questions[getArea(players[turn]['position'])[0]].length - 1, 0, false)
     var quest = questions[getArea(players[turn]['position'])[0]][randomQuest]
@@ -651,7 +663,7 @@ function checkAnswer(quest, answered) {
 }
 
 function timeOver() {
-    window.clearInterval(interval)
+    clearInterval(interval)
     var muchBack = randomChoice(7, 2, false)
     if (players[turn]['position'] <= muchBack) {
         players[turn]['position'] = 0
@@ -696,16 +708,6 @@ function phase2() {
         </div>`
 }
 
-function verifyTimer() {
-    var timer = document.getElementById("timer")
-    if (timer.innerHTML == 0) {
-        return 1
-    }
-    else {
-        return 0
-    }
-}
-
 function phase3() {
     document.getElementById('card').remove()
     gameBox.innerHTML = `
@@ -714,7 +716,8 @@ function phase3() {
                 ${getQuestion()}
             </div>
         </div>`
-    interval = window.setInterval(if (verifyTimer() == 1) {timeOver()} else{timer.innerHTML = Number(timer.innerHTML) - 1}, 1000)
+    var timer = document.getElementById("timer")
+    interval = setInterval(function () {if (timer.innerHTML == 0) {timeOver()} else{timer.innerHTML = Number(timer.innerHTML - 1)}}, 1000)
 }
 
 phase1()
