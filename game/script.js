@@ -629,6 +629,7 @@ function getQuestion() {
 }
 
 function checkAnswer(quest, answered) {
+    clearInterval(interval)
     question = questions[getArea(players[turn]['position'])[0]][quest]
     answer = question['correct']
     if (answer == answered) {
