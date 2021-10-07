@@ -2,41 +2,40 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="app.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-    <title>BCLeme Play</title>
+    <title>BCLeme</title>
 </head>
 <!--  
-______            _ _     _      ___  
-| ___ \          | (_)   | |    |__ \ 
-| |_/ ___ _ __ __| |_  __| | ___   ) |
-|  __/ _ | '__/ _` | |/ _` |/ _ \ / / 
-| | |  __| | | (_| | | (_| | (_) |_|  
-\_|  \___|_|  \__,_|_|\__,_|\___/(_)  
-Sinta-se live para olhar o código fonte da página, não sou o melhor em HTML, CSS e Js, mas deu para o gasto...
+______  _____  _                            ______ _             
+| ___ \/  __ \| |                           | ___ \ |            
+| |_/ /| /  \/| |     ___ _ __ ___   ___    | |_/ / | __ _ _   _ 
+| ___ \| |    | |    / _ \ '_ ` _ \ / _ \   |  __/| |/ _` | | | |
+| |_/ /| \__/\| |___|  __/ | | | | |  __/   | |   | | (_| | |_| |
+\____/  \____/\_____/\___|_| |_| |_|\___|   \_|   |_|\__,_|\__, |
+                                                            __/ |
+                                                           |___/ 
  -->
 <body>
     <div id="logoContainer">
-        <img src="logo.png" alt="" id="logo">
+        <img src="logo.png" alt="logo.png" id="logo">
     </div>
     <h1>Bem vindo ao<br><i>BCLeme Play</i></h1>
-    <h2>Este site foi desenvolvido em parceria com o colégio Bom Começo e Leme! O site tem o intuito de funcionar em conjunto com o jogo de tabuleiro impresso, feito pelos alunos do 1° ano do ensino médio, auxiliando na jogabilidade e diversão dos jogadores</h2>
+    <h2>Este site foi desenvolvido em parceria com o colégio Bom Começo e Leme</h2>
+    <h2>O site tem o intuito de funcionar em conjunto com o jogo de tabuleiro impresso, desenvolvido pelos alunos do 1° ano do Ensino Médio</h2>
     <hr>
     <h2>Para jogar, escolha a quantidade de jogadores e clique em <i>Criar Novo Jogo</i></h2>
-    <div id="dataBox">
-        <h2>Quantos Jogadores?</h2>
-        <div id="inputBox">
-            <button class="playersBtn" onclick=lessPlayer()>-</button>
-            <h1 id="amountPlayers">2</h1>
-            <button class="playersBtn" onclick=morePlayer()>+</button>
-        </div>
+    <h2>Quantos Jogadores?</h2>
+    <div id="input">
+        <button class="playersBtn" onclick=lowPlayer()>-</button>
+        <h1 id="amountPlayers">2</h1>
+        <button class="playersBtn" onclick=addPlayer()>+</button>
     </div>
-    <div id="newGameBtnBox">
+    <div id="newGameContainer">
         <button id="newGameBtn" onclick=newGame()>Criar Novo Jogo</button>
     </div>
     <script src="script.js"></script>
