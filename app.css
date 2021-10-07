@@ -2,6 +2,7 @@ body {
     background-color: #d3d3d3;
     color: #222222;
     font-family: 'Quicksand', sans-serif;
+    text-align: center
 }
 
 #logoContainer {
@@ -14,11 +15,7 @@ body {
     height: 320px;
 }
 
-h1, h2 {
-    text-align: center;
-}
-
-#newGameBtnBox {
+#newGameContainer {
     display: flex;
     justify-content: center;
 }
@@ -37,8 +34,8 @@ h1, h2 {
 
 #newGameBtn:hover {
     font-size: 30px;
-    width: 260px;
-    height: 50px;
+    width: 255px;
+    height: 45px;
 }
 
 #newGameBtn:after {
@@ -47,7 +44,7 @@ h1, h2 {
     height: 40px;
 }
 
-#inputBox {
+#input {
     display: flex;
     justify-content: center;
 }
