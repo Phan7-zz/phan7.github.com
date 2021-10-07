@@ -1,12 +1,12 @@
 var amountPlayers = document.getElementById('amountPlayers')
 
-function morePlayer() {
+function addPlayer() {
     if (parseInt(amountPlayers.innerText) < 5) {
         amountPlayers.innerHTML = parseInt(amountPlayers.innerText) + 1
     }
 }
 
-function lessPlayer() {
+function rmPlayer() {
     if (parseInt(amountPlayers.innerText) > 2) {
         amountPlayers.innerHTML = parseInt(amountPlayers.innerText) - 1
     }
