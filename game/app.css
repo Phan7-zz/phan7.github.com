@@ -4,54 +4,71 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
-h1, h2 {
+h1, h2, h3 {
     text-align: center;
 }
 
-#randomBox {
+#drawBox {
     display: flex;
     justify-content: center;
 }
 
-#randomBtn {
-    width: 90px;
-    height: 90px;
-    font-size: 25px;
-    border-radius: 10px;
-}
-
-#randomResult {
-    font-size: 35px;
-    margin: 0px;
-}
-
-#cardBox {
-    display: flex;
-    justify-content: center;
-}
-
-#card {
-    width: 270px;
-    height: 390px;
-    border-radius: 10px;
-    font-size: 25px;
-    margin-top: 20px;
-}
-
-.answer {
-    text-align: left;
-    margin: 5px;
-    width: 250px;
-    height: 45px;
+#drawBtn {
+    height: 75px;
+    width: 75px;
+    border-radius: 15px;
     font-size: 18px;
+}
+
+#questBox {
+    display: flex;
+    justify-content: center;
+}
+
+#questBtn {
+    border-radius: 20px;
+    color: #d3d3d3;
+    font-size: 30px;
+    height: 350px;
+    width: 250px;
+}
+
+.answBtn {
+    text-align: left;
     border-radius: 5px;
-    margin-left: 2px;
+    font-size: 17px;
+    height: 50px;
+    width: 320px;
+    margin: 2px;
 }
 
 #continueBtn {
-    width: 120px;
-    height: 90px;
-    font-size: 25px;
-    border-radius: 10px;
-    text-align: center;
+    height: 35px;
+    width: 100px;
+    font-size: 18px;
+    border-radius: 15px;
+}
+
+#menuBtn {
+    background-color: rgb(9, 206, 9);
+    margin: 30px;
+    border-radius: 15px;
+    color: #222222;
+    font-size: 28px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+#menuBtn:hover {
+    font-size: 30px;
+    width: 255px;
+    height: 45px;
+}
+
+#menuBtn:after {
+    font-size: 28px;
+    width: 250px;
+    height: 40px;
 }
