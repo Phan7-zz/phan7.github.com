@@ -2,7 +2,7 @@ function random() {
     var random = parseInt(Math.random() * (7 - 1) + 1)
 
     if (random == 1) {
-        var random2 = random + 'uma casa'
+        var random2 = 'uma casa'
     }
     else {
         var random2 = random +' casas'
