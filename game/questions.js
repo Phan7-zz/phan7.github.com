@@ -147,7 +147,7 @@ let questions = {
         },
         {
             'quest': 'O Brasil faz parte de qual continente?',
-            'a': 'Eurapa',
+            'a': 'Europa',
             'b': 'Africa',
             'c': 'América',
             'd': 'Ásia',
