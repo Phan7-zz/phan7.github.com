@@ -61,3 +61,56 @@ body {
     height: 50px;
     font-size: 40px;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+#helpBtn {
+    background-color: rgb(9, 206, 9);
+    margin: 10px;
+    border-radius: 15px;
+    color: #222222;
+    font-size: 28px;
+    border: none;
+    width: 110px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+#helpBtn:hover {
+    font-size: 30px;
+    width: 115px;
+    height: 45px;
+}
+
+#helpBtn:after {
+    font-size: 28px;
+    width: 110px;
+    height: 40px;
+}
+
+#backBtn {
+    background-color: rgb(9, 206, 9);
+    margin: 10px;
+    border-radius: 15px;
+    color: #222222;
+    font-size: 28px;
+    border: none;
+    width: 110px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+#backBtn:hover {
+    font-size: 30px;
+    width: 115px;
+    height: 45px;
+}
+
+#backBtn:after {
+    font-size: 28px;
+    width: 110px;
+    height: 40px;
+}
